@@ -1,0 +1,9 @@
+{
+	"name": "siv-status-page",
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"build": "bun scripts/build-status-page.ts",
+		"test": "bun test"
+	}
+}
