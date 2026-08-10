@@ -36,8 +36,12 @@ describe("public status page", () => {
 		);
 
 		expect(workflow).toContain("contents: write");
+		expect(workflow).toContain("pages: write");
+		expect(workflow).toContain("id-token: write");
 		expect(workflow).toContain("${GITHUB_REPOSITORY}.git");
 		expect(workflow).toContain("${{ github.token }}");
+		expect(workflow).toContain("actions/upload-pages-artifact@v4");
+		expect(workflow).toContain("actions/deploy-pages@v4");
 		expect(workflow).not.toContain("STATUS_PAGE_DEPLOY_KEY");
 		expect(workflow).not.toContain("SIV-chat/platform");
 	});
@@ -97,9 +101,6 @@ describe("public status page", () => {
 		expect(pageHtml).not.toContain("status.siv.chat");
 		expect(await readFile(join(outputDir, "index.html"), "utf8")).toContain(
 			"url=./status/",
-		);
-		expect(await readFile(join(outputDir, "CNAME"), "utf8")).toBe(
-			"sivintelligence.se\n",
 		);
 		expect(await readFile(join(outputDir, ".nojekyll"), "utf8")).toBe("");
 		expect(

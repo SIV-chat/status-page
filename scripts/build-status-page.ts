@@ -41,7 +41,6 @@ const rootDir = resolve(import.meta.dir, "..");
 const sourceDir = join(rootDir, "site");
 const defaultOutputDir = join(rootDir, "dist");
 const statusPath = "status";
-const customDomain = "sivintelligence.se";
 const maxAttempts = 3;
 const historyRetentionDays = 90;
 const historyRetentionMs = historyRetentionDays * 24 * 60 * 60 * 1_000;
@@ -236,7 +235,6 @@ export const buildStatusPage = async (
 		),
 		cp(join(sourceDir, "favicon.svg"), join(statusOutputDir, "favicon.svg")),
 		writeFile(join(outputDir, ".nojekyll"), "", "utf8"),
-		writeFile(join(outputDir, "CNAME"), `${customDomain}\n`, "utf8"),
 		writeFile(
 			join(statusOutputDir, "status.json"),
 			`${JSON.stringify(snapshot, null, 2)}\n`,
