@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-09-05T22:12:35.118Z",
+  "overall": "operational",
+  "components": [
+    {
+      "id": "app",
+      "name": "Product application",
+      "status": "operational",
+      "statusCode": 200,
+      "latencyMs": 773
+    },
+    {
+      "id": "api",
+      "name": "API and database",
+      "status": "operational",
+      "statusCode": 200,
+      "latencyMs": 662
+    },
+    {
+      "id": "website",
+      "name": "Public website",
+      "status": "operational",
+      "statusCode": 200,
+      "latencyMs": 429
+    }
+  ]
+}
