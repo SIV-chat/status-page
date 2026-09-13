@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Siv service status">
+	<rect width="64" height="64" rx="16" fill="#17211d" />
+	<circle cx="50" cy="14" r="7" fill="#28a66a" />
+	<path d="M42 21c-5-5-17-6-23-1-7 6-2 14 6 16l7 2c5 1 5 6 1 8-5 3-13 1-18-4l-6 7c8 8 22 10 31 4 9-6 7-18-4-21l-7-2c-4-1-4-4-1-5 3-2 7-1 10 2z" fill="#f4f2eb" />
+</svg>
