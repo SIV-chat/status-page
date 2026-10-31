@@ -1,0 +1,355 @@
+:root {
+	color-scheme: light;
+	font-family:
+		Inter,
+		ui-sans-serif,
+		-apple-system,
+		BlinkMacSystemFont,
+		"Segoe UI",
+		sans-serif;
+	background: #f4f2eb;
+	color: #17211d;
+	font-synthesis: none;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	min-width: 320px;
+	min-height: 100vh;
+	background:
+		radial-gradient(
+			circle at 85% 4%,
+			rgba(166, 198, 176, 0.22),
+			transparent 30rem
+		),
+		#f4f2eb;
+}
+
+a {
+	color: inherit;
+}
+
+.shell {
+	width: min(760px, calc(100% - 40px));
+	margin: 0 auto;
+	padding: 44px 0 56px;
+}
+
+.masthead {
+	display: flex;
+	align-items: baseline;
+	justify-content: space-between;
+	margin-bottom: 72px;
+}
+
+.brand {
+	font-family: Georgia, "Times New Roman", serif;
+	font-size: 2rem;
+	font-weight: 700;
+	letter-spacing: -0.06em;
+	text-decoration: none;
+}
+
+.page-label,
+.eyebrow,
+.component-state,
+.component-uptime {
+	font-size: 0.75rem;
+	font-weight: 700;
+	letter-spacing: 0.11em;
+	text-transform: uppercase;
+}
+
+.page-label {
+	color: #657169;
+}
+
+.status-card {
+	padding: 34px;
+	border: 1px solid rgba(23, 33, 29, 0.12);
+	border-radius: 22px;
+	background: rgba(255, 255, 252, 0.74);
+	box-shadow: 0 22px 60px rgba(37, 48, 41, 0.08);
+}
+
+.status-heading {
+	display: flex;
+	align-items: center;
+	gap: 20px;
+}
+
+.status-mark,
+.component-mark {
+	display: block;
+	flex: 0 0 auto;
+	border-radius: 999px;
+	background: #8b948e;
+	box-shadow: 0 0 0 7px rgba(139, 148, 142, 0.13);
+}
+
+.status-mark {
+	width: 16px;
+	height: 16px;
+}
+
+.component-mark {
+	width: 10px;
+	height: 10px;
+	box-shadow: none;
+}
+
+[data-status="operational"] .status-mark,
+[data-status="operational"] .component-mark {
+	background: #168453;
+}
+
+[data-status="degraded"] .status-mark,
+[data-status="degraded"] .component-mark {
+	background: #b46a13;
+}
+
+[data-status="outage"] .status-mark,
+[data-status="outage"] .component-mark {
+	background: #b33b32;
+}
+
+.eyebrow {
+	margin: 0 0 7px;
+	color: #657169;
+}
+
+h1,
+h2,
+p {
+	margin-top: 0;
+}
+
+h1 {
+	margin-bottom: 0;
+	font-family: Georgia, "Times New Roman", serif;
+	font-size: clamp(2rem, 6vw, 3.65rem);
+	font-weight: 500;
+	letter-spacing: -0.045em;
+	line-height: 0.98;
+}
+
+.summary {
+	max-width: 560px;
+	margin: 28px 0 0 36px;
+	color: #526057;
+	font-size: 1rem;
+	line-height: 1.6;
+}
+
+.components {
+	margin-top: 64px;
+}
+
+.history {
+	margin-top: 54px;
+}
+
+.section-heading {
+	display: flex;
+	align-items: baseline;
+	justify-content: space-between;
+	gap: 28px;
+	margin-bottom: 16px;
+}
+
+.section-heading h2 {
+	margin-bottom: 0;
+	font-size: 1rem;
+}
+
+.section-heading p {
+	margin-bottom: 0;
+	color: #717b75;
+	font-size: 0.85rem;
+}
+
+.component-list {
+	border-top: 1px solid rgba(23, 33, 29, 0.14);
+}
+
+.component {
+	display: grid;
+	grid-template-columns: auto 1fr auto auto;
+	align-items: center;
+	gap: 16px;
+	min-height: 72px;
+	border-bottom: 1px solid rgba(23, 33, 29, 0.14);
+}
+
+.component-name {
+	font-weight: 650;
+}
+
+.component-state {
+	color: #657169;
+}
+
+.component-uptime {
+	color: #526057;
+	font-size: 0.68rem;
+	letter-spacing: 0.07em;
+	text-align: right;
+}
+
+.component[data-status="operational"] .component-state {
+	color: #137247;
+}
+
+.component[data-status="outage"] .component-state {
+	color: #9f342c;
+}
+
+.history-list {
+	border-top: 1px solid rgba(23, 33, 29, 0.14);
+}
+
+.history-row {
+	padding: 18px 0 20px;
+	border-bottom: 1px solid rgba(23, 33, 29, 0.14);
+}
+
+.history-row-heading {
+	display: flex;
+	justify-content: space-between;
+	gap: 20px;
+	margin-bottom: 10px;
+}
+
+.history-row-heading strong {
+	font-size: 0.85rem;
+}
+
+.history-row-heading span {
+	color: #526057;
+	font-size: 0.75rem;
+}
+
+.history-days {
+	display: grid;
+	grid-template-columns: repeat(30, minmax(4px, 1fr));
+	gap: 4px;
+}
+
+.history-day {
+	height: 26px;
+	border-radius: 3px;
+	background: #cfd2ce;
+}
+
+.history-day[data-history-status="operational"],
+.history-legend i[data-history-status="operational"] {
+	background: #168453;
+}
+
+.history-day[data-history-status="outage"],
+.history-legend i[data-history-status="outage"] {
+	background: #b33b32;
+}
+
+.history-legend {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 16px;
+	margin-top: 14px;
+	color: #657169;
+	font-size: 0.72rem;
+}
+
+.history-legend span {
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+}
+
+.history-legend i {
+	display: inline-block;
+	width: 9px;
+	height: 9px;
+	border-radius: 2px;
+	background: #cfd2ce;
+}
+
+.history-note {
+	max-width: 580px;
+	margin: 14px 0 0;
+	color: #717b75;
+	font-size: 0.75rem;
+	line-height: 1.55;
+}
+
+footer {
+	display: flex;
+	justify-content: space-between;
+	gap: 30px;
+	margin-top: 54px;
+	color: #717b75;
+	font-size: 0.78rem;
+	line-height: 1.55;
+}
+
+footer p {
+	margin-bottom: 0;
+}
+
+footer p:last-child {
+	max-width: 310px;
+	text-align: right;
+}
+
+@media (max-width: 620px) {
+	.shell {
+		width: min(100% - 28px, 760px);
+		padding-top: 28px;
+	}
+
+	.masthead {
+		margin-bottom: 46px;
+	}
+
+	.status-card {
+		padding: 26px 22px;
+	}
+
+	.summary {
+		margin-left: 0;
+	}
+
+	.component {
+		grid-template-columns: auto 1fr auto;
+		gap: 12px;
+	}
+
+	.component-uptime {
+		grid-column: 2;
+		grid-row: 2;
+		text-align: left;
+	}
+
+	.component-state {
+		grid-column: 3;
+		grid-row: 1 / span 2;
+	}
+
+	.history-days {
+		gap: 2px;
+	}
+
+	.section-heading,
+	footer {
+		align-items: flex-start;
+		flex-direction: column;
+	}
+
+	footer p:last-child {
+		text-align: left;
+	}
+}
