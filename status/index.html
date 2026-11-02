@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="theme-color" content="#f4f2eb" />
+		<meta name="referrer" content="no-referrer" />
+		<meta
+			http-equiv="Content-Security-Policy"
+			content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'"
+		/>
+		<meta
+			name="description"
+			content="Live availability for Siv's production application, API, and website."
+		/>
+		<meta property="og:title" content="Siv service status" />
+		<meta
+			property="og:description"
+			content="Live availability for Siv's production services."
+		/>
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="https://sivintelligence.se/status/" />
+		<link rel="canonical" href="https://sivintelligence.se/status/" />
+		<link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+		<link rel="stylesheet" href="./styles.css" />
+		<title>Siv service status</title>
+	</head>
+	<body>
+		<main class="shell">
+			<header class="masthead">
+				<a class="brand" href="https://siv.chat" aria-label="Siv home">Siv</a>
+				<span class="page-label">Service status</span>
+			</header>
+
+			<section class="status-card" aria-labelledby="overall-title">
+				<div class="status-heading">
+					<span class="status-mark" id="overall-mark" aria-hidden="true"></span>
+					<div>
+						<p class="eyebrow">Current availability</p>
+						<h1 id="overall-title">Checking Siv services…</h1>
+					</div>
+				</div>
+				<p
+					class="summary"
+					id="overall-summary"
+					role="status"
+					aria-live="polite"
+				>
+					The latest external check is loading.
+				</p>
+			</section>
+
+			<section class="components" aria-labelledby="components-title">
+				<div class="section-heading">
+					<h2 id="components-title">Services</h2>
+					<p>Checked from outside Siv's production infrastructure.</p>
+				</div>
+				<div
+					class="component-list"
+					id="component-list"
+					aria-live="polite"
+				></div>
+			</section>
+
+			<section class="history" aria-labelledby="history-title">
+				<div class="section-heading">
+					<h2 id="history-title">Past 30 days</h2>
+					<p>Daily results from the external checks.</p>
+				</div>
+				<div class="history-list" id="history-list"></div>
+				<div class="history-legend" aria-label="Uptime history legend">
+					<span><i data-history-status="operational"></i>Operational</span>
+					<span><i data-history-status="outage"></i>Interruption observed</span>
+					<span><i data-history-status="unknown"></i>No data</span>
+				</div>
+				<p class="history-note">
+					Percentages are observed uptime over the retained 90-day history.
+					Missing check intervals are not counted as operational.
+				</p>
+			</section>
+
+			<footer>
+				<p>
+					Last external check:
+					<time id="checked-at">Waiting for data</time>
+				</p>
+				<p>
+					Status refreshes every five minutes and keeps 90 days of history. For
+					support, email
+					<a href="mailto:hello@siv.chat">hello@siv.chat</a>.
+				</p>
+			</footer>
+		</main>
+		<script type="module" src="./status.js"></script>
+	</body>
+</html>
